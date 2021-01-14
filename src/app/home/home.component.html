@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="text-end" *ngIf="!showLogin"><button class="btn btn-danger"  (click)="onLogout()">logout</button></div>
+    <div *ngIf="showLogin;else logged">
+        <div class="mb-5">
+            <h1 class="text-center">Welcome to SpeedNet</h1>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-6">
+                    <form (ngSubmit)="onLogin(f)" #f="ngForm" >
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="staticEmail" ngModel name="email" >
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-5">
+                          <input type="password" class="form-control" id="inputPassword" ngModel name="password">
+                        </div>
+                      </div>
+        
+                      <div>
+                          <button class="btn btn-primary">Login</button>
+                      </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <ng-template #logged>
+        <div class="mb-5">
+            <h4 class="text-center text-success">Login Succesfull</h4>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,47 @@
+<div class="container mt-3">
+    <div class="d-flex flex-column">
+        <div class="align-self-center w-50">
+            <form #f="ngForm" (ngSubmit)="onPayment(f)">
+                <div class="row mb-3 ">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="">UserId : </label>
+                        <input type="email" required class="form-control" ngModel name="userid" id="exampleFormControlInput1" >
+                    </div>
+                </div>
+        
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="">Amount : </label>
+                        <input type="email" required class="form-control" ngModel name="amount" id="exampleFormControlInput1" >
+                    </div>
+                </div>
+        
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="">Card Number : </label>
+                        <input type="email" required class="form-control" ngModel name="card-number" id="exampleFormControlInput1" >
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="">Expiry Date : </label>
+                        <input type="date" required class="form-control" ngModel name="exp-date" id="exampleFormControlInput1" >
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="">CVV </label>
+                        <input type="text" required class="form-control" ngModel name="cvv" id="exampleFormControlInput1" >
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <button class="btn btn-success" [disabled]="!(f.valid && f.touched)">Make Payment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
